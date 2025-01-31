@@ -120,8 +120,7 @@ if uploaded_file:
 
     # Provide a list of color palette options
     color_palettes = [
-        "husl", "Set1", "Set2", "Dark2", "Paired",
-        "Pastel1", "Pastel2", "Accent", "tab10", "tab20"
+        "husl", "Set1", "Set2", "Dark2", "Paired", "Pastel1", "Pastel2", "Accent", "tab10", "tab20"
     ]
     selected_palette = st.sidebar.selectbox("Select Color Palette", color_palettes, index=0)
 
@@ -220,6 +219,8 @@ if uploaded_file:
         if show_ci:
             plot_confidence_ellipse(ax, subset['PC1'], subset['PC2'], color)
 
+    # Collect text objects for adjust_text
+    texts = []
     for i in top_indices:
         ax.arrow(
             0, 0,
@@ -228,13 +229,21 @@ if uploaded_file:
             color='red',
             alpha=0.5
         )
-        ax.text(
+        txt = ax.text(
             loadings[i, 0] * (3.5 * vector_scale),
             loadings[i, 1] * (3.5 * vector_scale),
             X.columns[i],
             color='red',
             fontsize=9
         )
+        texts.append(txt)
+
+    # Use adjust_text to reduce overlapping labels
+    adjust_text(
+        texts,
+        ax=ax,
+        arrowprops=dict(arrowstyle='-', color='gray', alpha=0.5, lw=0.5)
+    )
 
     ax.set_xlabel(f"PC1 ({explained_var[0]:.2f}% Variance)")
     ax.set_ylabel(f"PC2 ({explained_var[1]:.2f}% Variance)")
@@ -244,9 +253,7 @@ if uploaded_file:
 
     # **Interactive 3D Biplot with Labels**
     st.subheader("Interactive 3D Biplot")
-    top_indices = np.argsort(
-        np.sqrt(loadings[:, 0]**2 + loadings[:, 1]**2 + loadings[:, 2]**2)
-    )[-top_n_metabolites:]
+    top_indices = np.argsort(np.sqrt(loadings[:, 0]**2 + loadings[:, 1]**2 + loadings[:, 2]**2))[-top_n_metabolites:]
 
     fig = go.Figure()
     for group, color in group_color_map.items():
@@ -266,7 +273,7 @@ if uploaded_file:
             )
             fig.add_trace(ellipsoid_surf)
 
-    # Plot metabolite vectors
+    loadings = pca.components_.T
     for i in top_indices:
         fig.add_trace(go.Scatter3d(
             x=[0, loadings[i, 0] * (10 * vector_scale)],
