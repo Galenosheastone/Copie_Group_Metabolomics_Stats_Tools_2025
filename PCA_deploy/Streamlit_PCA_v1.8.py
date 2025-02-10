@@ -103,7 +103,7 @@ def make_3d_ellipsoid(pc1, pc2, pc3, color, name="Ellipsoid", opacity=0.15):
 ############################################################
 
 # Set Streamlit app title
-st.title("PCA Analysis and Visualization App")
+st.title("Copié Lab NMR Metabolomics PCA Analysis and Visualization App")
 
 # Upload dataset
 uploaded_file = st.file_uploader("Upload your CSV dataset", type="csv")
