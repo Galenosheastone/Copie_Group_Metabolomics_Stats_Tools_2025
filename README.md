@@ -95,7 +95,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For any questions or feedback, feel free to reach out:
 
 - **Author**: Galen Osheastone
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **Email**: [galenoshea@gmail.com](mailto:galenoshea@gmail.com)
 - **GitHub**: [Galenosheastone](https://github.com/Galenosheastone)
 
 ---
