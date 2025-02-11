@@ -1,6 +1,3 @@
-Based on the information available from your GitHub repository, here's a brief README for your project:
-
----
 
 # Copie Group Metabolomics Stats Tools 2025
 
@@ -26,5 +23,5 @@ We welcome contributions to enhance the functionality of these tools. Please for
 
 This project is licensed under the [MIT License](LICENSE).
 
----
+
 
