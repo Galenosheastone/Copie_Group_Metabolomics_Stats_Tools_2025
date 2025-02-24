@@ -2,7 +2,15 @@
 # README for Bighorn Sheep Metabolomics Analysis Repository
 
 ## Overview
-This repository contains Python scripts and datasets used for statistical analysis in the publication of a paper on the metabolic profiles of wild bighorn sheep under different nutritional states. These scripts facilitate various preprocessing, visualization, and statistical analysis tasks, including repeated measures analysis, PCA, PLSDA, two-way ANOVA, and non-parametric tests. The datasets are used to support and validate these analyses.
+This repository contains Python scripts and datasets used for statistical analysis in the publication of the paper "Polar Metabolite Profiles Distinguish Between Early and Severe Sub-Maintenance Nutritional States of Wild Bighorn Sheep". 
+
+Citation: 
+O’Shea-Stone, G.; Tripet, B.; Thomson, J.; Garrott, R.; Copié, V. Polar Metabolite Profiles Distinguish Between Early and Severe Sub-Maintenance Nutritional States of Wild Bighorn Sheep. Metabolites 2025, 15, 154. 
+
+https://doi.org/10.3390/metabo15030154
+
+**********
+These scripts facilitate various preprocessing, visualization, and statistical analysis tasks, including repeated measures analysis, PCA, PLSDA, two-way ANOVA, and non-parametric tests. The datasets are used to support and validate these analyses.
 
 ## Files and Descriptions
 
