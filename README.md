@@ -113,7 +113,7 @@ These scripts facilitate various preprocessing, visualization, and statistical a
 Contributions are welcome! Please submit a pull request or open an issue for any suggested improvements or bug fixes.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the 'LICENSE' and 'LICENSE_CC_BY_NC_4.0.txt' file for details.
 
 ## Contact
 For questions or support, please contact [your email address].
